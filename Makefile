@@ -43,7 +43,7 @@ CFLAGS =	-Wall \
 			-Os \
 			-mmcu=$(BOARD) \
 			-DF_CPU=16000000UL \
-			-DGIT_SHA=\"$(shell git describe --abbrev=6 --dirty --always --tags)\" \
+			-DGIT_DESCR=\"$(shell git describe --abbrev=6 --dirty --always --tags --long)\" \
 			-std=c11
 
 # Linker flags
