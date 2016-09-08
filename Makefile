@@ -71,7 +71,9 @@ $(TARGET):
 	$(OBJCOPY) $(OBJCOPYARGS) $(ELF) $(TARGET)
 
 clean:
-	rm -f $(BINDIR)/* $(SRCDIR)/*.o
+#Do not remove .placeholder in BINDIR
+	find $(BINDIR) -type f -not -name '.placeholder' -print0 | xargs -0 rm -f --
+	rm -f $(SRCDIR)/*.o
 
 install:
 	$(AVRDUDE) $(AVRDUDEARGS) -U flash:w:$(TARGET)
