@@ -52,12 +52,14 @@ LDFLAGS = -mmcu=$(BOARD)
 OBJCOPYARGS =	-O ihex \
 				-R .eeprom
 
+# FIXME Find out why some Arduinos require -D to write code
 AVRDUDEARGS =	-p $(BOARD) \
 				-c wiring \
 				-F \
 				-P $(DEVICE) \
 				-b 115200 \
-				-V
+				-V \
+				-D
 
 all: $(ELF) $(TARGET)
 
