@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo "Test project build"
+echo "Testi project buildi"
 
 make clean && make
 
 if [ $? -ne 0 ] ; then
-    echo "Build failed!"
+    echo "Build ei 6nnestunud!"
     exit 1
 else
-    echo "Build OK!"
+    echo "Build korras!"
 fi
 
 
@@ -26,17 +26,17 @@ else
 fi
 
 
-echo "Currently set tags on this project"
+echo "Hetke tagid selles projektis"
 git tag
 echo -n "Are the required tags added? (Y/n)"
 read ANSWER
 if [ "$ANSWER" == "n" ]; then
-    echo "Please add required tags"
+    echo "Palun lisa vajalikud tagid"
     exit 1
 fi
 
 
-echo "Packaging the project"
+echo "Pakime projekti"
 
 make clean && make
 
@@ -47,5 +47,5 @@ git archive --format=tar.gz -o $TEMP_DIR/$(git describe --abbrev=6 --dirty --alw
 mv $TEMP_DIR/* bin/
 rm -rf $TEMP_DIR
 
-echo "Project packaging succeeded"
+echo "Projekti pakendamine 6nnestus"
 exit 0
