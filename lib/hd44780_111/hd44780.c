@@ -7,6 +7,8 @@ Version:   1.11
 #include <avr/pgmspace.h>
 #include <avr/sfr_defs.h>
 #include <inttypes.h>
+#define __ASSERT_USE_STDERR
+#include <assert.h>
 #include "hd44780.h"
 #include "hd44780_settings.h"
 
@@ -495,6 +497,8 @@ Returns:  none
 *************************************************************************/
 void lcd_goto(uint8_t pos)
   {
+    //Do not go outside of screen limits
+    assert(pos < LCD_COLS_MAX);
     lcd_command((1<<LCD_DDRAM)+pos);
   }
 

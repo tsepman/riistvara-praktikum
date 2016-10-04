@@ -36,6 +36,14 @@ Version:   1.11
 
 #define LCD_BUSY                7    // DB7: LCD is busy
 
+// LCD columns and rows definitions
+#define LCD_ROW_1               0
+#define LCD_ROW_2               64
+#define LCD_COLS_MAX            128
+
+// Maximum character what can be displayed with 1 byte
+#define MAX_CARACTER            255
+
 
 void lcd_init();
 void lcd_command(uint8_t cmd);
