@@ -722,3 +722,17 @@ void lcd_use_display(int ADisplay)
   }
 #endif
 
+
+/*************************************************************************
+Clear characters at position until length
+Input:    start position and lentgh
+Returns:  none
+*************************************************************************/
+void lcd_clr(uint8_t pos, uint8_t len)
+  {
+    for (int i = 0; i < len; i++) {
+        lcd_goto(pos + i);
+        lcd_putc(' ');
+    }
+  }
+

@@ -49,6 +49,7 @@ void lcd_init();
 void lcd_command(uint8_t cmd);
 
 void lcd_clrscr();
+void lcd_clr(uint8_t pos, uint8_t len);
 void lcd_home();
 void lcd_goto(uint8_t pos);
 
