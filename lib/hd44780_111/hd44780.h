@@ -2,8 +2,10 @@
 Title  :   HD44780 Library
 Author :   SA Development
 Version:   1.11
+Modifications for: Arduino Mega 2560
+                    Itead Studio Arduino 1602 LED Keypad Shield
+Modified by: Silver Kits <silver.kits@eesti.ee> October 2016
 *****************************************************************************/
-
 #ifndef HD44780_H
 #define HD44780_H
 
