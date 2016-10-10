@@ -1,4 +1,4 @@
-# Arduino Mega Arduino LCD1620 Keypad shield wiring
+# Arduino Mega Arduino LCD1602 Keypad shield wiring
 
 ## Introduction
 
